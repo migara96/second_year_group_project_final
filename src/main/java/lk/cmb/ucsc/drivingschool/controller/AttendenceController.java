@@ -17,9 +17,7 @@ public class AttendenceController {
 
     @Autowired
     private AttendenceService attendenceService;
-
-
-
+    
     @GetMapping("add")
     public String showAttendence(Model model){
         List<Attendence> attendenceList=new ArrayList<>();
