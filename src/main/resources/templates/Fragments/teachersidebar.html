@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<div th:fragment = "sidebar">
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+        <div class="menu_section">
+            <h3>General</h3>
+            <ul class="nav side-menu">
+
+                <li><a href="mystudent.html"><i class="fa fa-users"></i>My Students</a></li>
+                <li><a href="vehicle.html"><i class="fa fa-clone"></i>My Vehicles</a></li>
+                <li><a href="/api/teacher/attendence/add"><i class="fa fa-edit"></i>Attendence</a></li>
+                <li><a href="/api/teacher/list.html"><i class="fa fa-desktop"></i>Reviews</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>

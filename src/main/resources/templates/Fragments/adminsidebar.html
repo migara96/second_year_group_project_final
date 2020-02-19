@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<div th:fragment = "sidebar">
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+        <div class="menu_section">
+            <ul class="nav side-menu">
+                <li><a><i class="fa fa-users"></i> Sudents <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="/api/admin/student/crud">Student Details</a></li>
+                    </ul>
+                </li>
+                <li><a><i class="fa fa-users"></i>Teachers <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="/api/admin/student/crud">Teacher Details</a></li>
+                    </ul>
+                </li>
+                <!--
+                <li><a><i class="fa fa-edit"></i> Attendence <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="form.html">Student</a></li>
+                        <li><a href="form_advanced.html">Teacher</a></li>
+
+                    </ul>
+                </li>
+                -->
+                <li><a><i class="fa fa-edit"></i> Registration <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="/api/admin/signup/student">Students</a></li>
+                        <li><a href="/api/admin/signup/teacher">Teachers</a></li>
+                    </ul>
+                </li>
+                <li><a><i class="fa fa-table"></i> Scheduling <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="/api/admin/sheduling/daily">Daily Scheduling</a></li>
+                    </ul>
+                </li>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

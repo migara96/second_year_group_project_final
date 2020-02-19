@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Trainer Dashboard </title>
+
+    <!-- Bootstrap -->
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/webjars/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/webjars/nprogress/0.2.0/nprogress.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+
+    <!-- Custom styling plus plugins -->
+    <link href="/css/custom.min.css" rel="stylesheet">
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                    <a href="/api/teacher" class="site_title"><i class="fa fa-paw"></i> <span>Sourthen learnears!</span></a>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <!-- menu profile quick info -->
+                <div class="profile clearfix">
+                    <div class="profile_pic">
+                        <img src="/images/img.jpg" alt="..." class="img-circle profile_img">
+                    </div>
+                    <div class="profile_info">
+                        <span>Welcome,</span>
+                        <h2>Trainer</h2>
+                    </div>
+                </div>
+                <!-- /menu profile quick info -->
+
+                <br />
+
+                <!-- sidebar menu -->
+                <div th:replace="Fragments/teachersidebar :: sidebar"></div>
+
+                <!-- /sidebar menu -->
+
+            </div>
+        </div>
+
+        <!-- top navigation -->
+        <div th:replace="Fragments/teachertopnav :: topnav"></div>
+
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <h2>Student Details</h2>
+            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" th:object="${teacherForm}" th:action="@{/teacher}" method="post">
+
+               <!-- <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                    <p th:text="${#fields.hasErrors}">Error Message</p>
+                </div> -->
+
+                <input type="hidden" th:field="*{id}"/>
+
+                <div class="item form-group" >
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Name <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 ">
+                        <input type="text" id="name" name="name" th:field="*{name}" placeholder="Enter Name" required="required" class="form-control ">
+
+                       <!-- <span class="help-block">
+                       <ul>
+                           <li th:each="err : ${#fields.errors('name')}" th:text="${err}" />
+                       </ul>
+                    </span>-->
+
+                    </div>
+                </div>
+                <div class="item form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="competence">Competence <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 ">
+                        <input type="text" id="competence" name="competence" th:field="*{competence}" required="required" class="form-control">
+                    </div>
+                </div>
+                <div class="item form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="attendence">Present/Absent <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 ">
+                        <input type="text" id="attendence" name="attendence" th:field="*{attendence}" required="required" class="form-control">
+                    </div>
+                </div>
+
+                <div class="item form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="comment">Comment<span class="required">*</span></label>
+                    <div class="col-md-6 col-sm-6 ">
+                        <textarea type="text" id="comment" name="comment" th:field="*{comment}" required="required"class="resizable_textarea form-control" placeholder="Add a Comment"></textarea>
+                    </div>
+                </div>
+
+                <div class="ln_solid"></div>
+                <div class="item form-group">
+                    <div class="col-md-6 col-sm-6 offset-md-3">
+                        <button class="btn btn-primary" type="button">Cancel</button>
+                        <button class="btn btn-primary" type="reset">Reset</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+            <!-- /page content -->
+
+
+
+        <!-- Footer -->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Footer Location -->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <p class="lead mb-0">22,Upper dickson road,
+                            <br>Galle, Sri Lanka.</p>
+                    </div>
+
+                    <!-- Footer Social Icons -->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#">
+                            <i class="fab fa-fw fa-facebook-f"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#">
+                            <i class="fab fa-fw fa-twitter"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#">
+                            <i class="fab fa-fw fa-linkedin-in"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#">
+                            <i class="fab fa-fw fa-dribbble"></i>
+                        </a>
+                    </div>
+
+                    <!-- Footer About Text -->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                        <p class="lead mb-0">Freelance is a free to use, MIT licensed Bootstrap theme created by
+                            <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+</div>
+</div>
+
+
+<!-- jQuery -->
+<script src="/webjars/jquery/2.2.3/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- FastClick -->
+<script src="/webjars/fastclick/1.0.6/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../vendors/nprogress/nprogress.js"></script>
+<!-- bootstrap-wysiwyg -->
+<script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+<script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+<script src="../vendors/google-code-prettify/src/prettify.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="/js/custom.min.js"></script>
+
+</body>
+</html>
