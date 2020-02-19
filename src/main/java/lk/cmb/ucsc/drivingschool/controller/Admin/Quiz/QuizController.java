@@ -1,8 +1,6 @@
 package lk.cmb.ucsc.drivingschool.controller.Admin.Quiz;
 
-import lk.cmb.ucsc.drivingschool.model.Attendence;
 import lk.cmb.ucsc.drivingschool.model.Quiz;
-import lk.cmb.ucsc.drivingschool.service.AttendenceService;
 import lk.cmb.ucsc.drivingschool.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/api/admin/quiz/")
+@RequestMapping("/api/admin/Quiz/quiz/")
 public class QuizController {
 
     @Autowired
