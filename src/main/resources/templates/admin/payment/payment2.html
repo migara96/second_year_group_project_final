@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<body lang="en" xmlns:th="http://www.thymeleaf.org ">
+<head >
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Admin Dashboard </title>
+
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/webjars/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/webjars/nprogress/0.2.0/nprogress.css" rel="stylesheet">
+    <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <link href="/css/custom.min.css" rel="stylesheet">
+</head>
+
+
+<div class="right_col" role="main">
+    <div class="table-responsive">
+        <table class="table table-striped jambo_table bulk_action">
+            <thead>
+            <tr class="headings">
+                <th>
+                    <input type="checkbox" id="check-all" class="flat">
+                </th>
+                <th class="column-title">Plate Number </th>
+                <th class="column-title">Model </th>
+                <th class="column-title">Make </th>
+                <th class="column-title">Year </th>
+                </th>
+                <th class="bulk-actions" colspan="7">
+                    <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="paymentList : ${paymentList}" class="even pointer">
+                <td class="a-center ">
+                    <input type="checkbox" class="flat" name="table_records">
+                </td>
+                <td class=" "th:text="${paymentList.id}"></td>
+                <td class=" " th:text="${paymentList.Student_name}" ><i class="success fa fa-long-arrow-up"></i></td>
+                <td class=" " th:text="${paymentList.Invoice_ID}"> L</td>
+                <td class=" " th:text="${paymentList.Amount}"></td>
+
+                </td>
+            </tr>
+
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
