@@ -14,9 +14,11 @@ public class UserService {
     public User createUser(User user){
         return userRepo.save(user);
     }
+
     public User getByFirstname(String firstname){
         return userRepo.findByFirstname(firstname);
     }
+
     public User update(String firstname,String lastname){
         User user=userRepo.findByFirstname(firstname);
         user.setLastname(lastname);

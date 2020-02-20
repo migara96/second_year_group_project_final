@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Controller
 @RequestMapping("/api/admin/vehicle/")
 public class VehicleController  {
@@ -18,12 +19,13 @@ public class VehicleController  {
 
     @GetMapping("add")
     public String showVehicle(Model model){
-        List<Vehicle> vehicleList=new ArrayList<>();
+        List<Vehicle> vehicleList = new ArrayList<>();
         vehicleList=vehicleService.findAll();
         model.addAttribute("vehicleList",vehicleList);
         model.addAttribute("vehicle", new Vehicle());
         return "admin/vehicle/vehicle";
     }
+
     @PostMapping("add")
     public String addVehicle(@ModelAttribute Vehicle vehicle){
         vehicleService.addVehicle(vehicle);
